@@ -1,0 +1,160 @@
+body {
+  font-family: $firstFont;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.svg-icon {
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.flex-btn, a.flex-btn {
+  border: 1px solid transparent;
+  padding: 9px 24px;
+  background-color: $burgundy;
+  border-radius: 12px;
+  font-family: $secondFont;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: $white;
+  transition: background-color 0.3s ease-in-out;
+  text-decoration: none;
+  &:hover {
+    @media (min-width: breakpoint-min(xl)) {
+      background-color: $burgundy-30;
+    }
+  }
+  &:active {
+    transition: background-color 0.1s ease-in-out;
+    background-color: $burgundy-30;
+
+    @media (min-width: breakpoint-min(xl)) {
+      background-color: $burgundy;
+    }
+  }
+  &:disabled {
+    color: $burgundy-30;
+    background-color: $gray-20;
+    border: 0;
+  }
+
+  &.gold {
+    background-color: $gold-60;
+    color: $burgundy;
+    &:hover {
+      @media (min-width: breakpoint-min(xl)) {
+        background-color: $gold;
+      }
+    }
+    &:active {
+      background-color: $gold;
+
+      @media (min-width: breakpoint-min(xl)) {
+        background-color: $gold-60;
+      }
+    }
+  }
+
+  &__outline {
+    border: 2px solid $burgundy;
+    padding: 9px 24px;
+    background-color: transparent;
+    border-radius: 12px;
+    font-family: $secondFont;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: $burgundy;
+    transition: background-color 0.3s ease-in-out;
+    text-decoration: none;
+    &:hover {
+      border-color: $burgundy-60;
+      color: $burgundy-60;
+      background-color: transparent;
+
+      .svg-icon {
+        color: $burgundy-60;
+      }
+    }
+
+    &.gold {
+      border-color: $gold-60;
+      color: $gold-60;
+      &:hover {
+        @media (min-width: breakpoint-min(xl)) {
+          border-color: $gold;
+          background-color: $gold;
+          color: $burgundy;
+        }
+      }
+      &:active {
+        border-color: $gold;
+        background-color: $gold;
+        color: $burgundy;
+
+        @media (min-width: breakpoint-min(xl)) {
+          border-color: $gold-60;
+          background-color: $gold-60;
+          color: $burgundy;
+        }
+      }
+    }
+
+    .svg-icon {
+      color: $burgundy;
+    }
+
+    @media (min-width: breakpoint-min(xl)) {
+      padding: 13px 32px;
+      font-size: 18px;
+      line-height: 20px;
+    }
+  }
+
+  .svg-icon {
+    font-size: 20px;
+  }
+
+  @media (min-width: breakpoint-min(xl)) {
+    padding: 13px 32px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.fake-link-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.custom-scrollbar {
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 30px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background-color: #E5E6EB;
+  }
+}
+
+.container {
+  @media (min-width: $min-xxxl) {
+    max-width: 1720px;
+  }
+}

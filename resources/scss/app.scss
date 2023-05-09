@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Circe';
+  src: url('/public/fonts/Circe-Regular.woff') format("woff"),
+  url('/public/fonts/Circe-Regular.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Circe Bold';
+  src: url('/public/fonts/Circe-Bold.woff') format("woff"),
+  url('/public/fonts/Circe-Bold.ttf') format("opentype");
+}
+
+@font-face {
+  font-family: 'Malayalam MN';
+  src: url('/public/fonts/Malayalam-MN.woff') format("woff"),
+  url('/public/fonts/Malayalam-MN.ttf') format("opentype");
+}
+
+// variables
+@import 'variables';
+
+// bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// vendors
+@import 'vendors/slick';
+
+// partials
+@import 'partials/header';
+@import 'partials/footer';
+
+// page
+@import 'pages/main';
+
+// helpers
+@import 'common';
+
