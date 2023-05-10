@@ -1,0 +1,15 @@
+.main {
+  margin-top: 73px;
+
+  @media (min-width: breakpoint-min(md)) {
+    margin-top: 75px;
+  }
+
+  @media (min-width: breakpoint-min(xl)) {
+    margin-top: 81px;
+  }
+
+  @media (min-width: breakpoint-min(xxl)) {
+    margin-top: 97px;
+  }
+}

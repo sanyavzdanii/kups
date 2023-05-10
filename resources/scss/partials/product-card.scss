@@ -1,0 +1,29 @@
+.product-card {
+  font-family: $firstFont;
+  border: 2px solid $burgundy;
+  background-color: $white;
+
+  &__name {
+    font-family: $secondFontBold;
+    color: $burgundy;
+    font-size: 16px;
+    line-height: 20px;
+
+    @media (min-width: breakpoint-min(xl)) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    @media (min-width: breakpoint-min(xxl)) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  &__img {
+    img {
+      width: 180px;
+      height: auto;
+    }
+  }
+}
