@@ -18,20 +18,26 @@
                 <input type="text" placeholder="Поиск скидок и купонов" class="header__search-input px-2 px-md-3 py-1 py-md-2" />
                 <button class="flex-btn__outline gold ms-2 mx-xl-3">Найти</button>
             </div>
-            <div class="header__menu mt-3 mt-xl-0 d-flex align-items-center flex-wrap flex-xl-nowrap justify-content-center">
-                <nav class="d-xl-flex mb-3 mb-xl-0">
-                    <span class="selected d-block d-xl-inline-block text-center py-1 py-xl-2 px-xl-2 my-2 my-xl-0">Новое</span>
-                    <a href="#" class="d-block d-xl-inline-block text-center py-1 py-xl-2 px-xl-2 my-2 my-xl-0">Горячее</a>
+            <div class="header__menu d-flex align-items-center flex-wrap flex-xl-nowrap justify-content-center">
+                <nav class="header__menu-inner custom-scrollbar d-flex my-3 my-xl-0 align-items-center flex-wrap flex-xl-nowrap flex-column flex-xl-nocolumn justify-content-center">
+                    <span class="selected d-block d-xl-inline-block text-center py-1 py-xl-2 px-xl-2 my-3 my-xl-0">Новое</span>
+                    <a href="#" class="d-block d-xl-inline-block text-center py-1 py-xl-2 px-xl-2 my-3 my-xl-0">Горячее</a>
                 </nav>
                 <a href="#" class="flex-btn__outline gold me-2">Добавить скидку</a>
                 <a href="#" class="flex-btn gold">Войти</a>
-                <button class="header__menu-btn flex-btn gold ms-2 mx-xl-3 d-xl-none">=</button>
             </div>
+            <svg class="header__menu-btn burger ms-2 mt-2 mx-xl-3 d-xl-none svg-icon">
+                <use xlink:href="/public/img/sprite.svg#burger-icon" />
+            </svg>
+            <svg class="header__menu-btn close ms-2 mt-1 mx-xl-3 d-none d-xl-none svg-icon">
+                <use xlink:href="/public/img/sprite.svg#close-icon" />
+            </svg>
         </section>
     </header>
     <main>
 
     </main>
+    <div class="shadow w-100 h-100 position-absolute"></div>
 <script src="/public/js/header.js" defer></script>
 <script src="/public/js/script.js" defer></script>
 </body>

@@ -10789,8 +10789,34 @@ body {
 }
 
 .header {
+  z-index: 100;
   background-color: #800020;
   color: #cfcfcf;
+}
+.header__menu-btn {
+  font-size: 24px;
+  color: #e3bf00;
+  transition: color 0.3s ease-in-out;
+}
+@media (min-width: 1200px) {
+  .header__menu-btn:hover {
+    color: #FFD700;
+  }
+}
+.header__menu-btn:active {
+  transition: background-color 0.1s ease-in-out;
+  color: #FFD700;
+}
+@media (min-width: 1200px) {
+  .header__menu-btn:active {
+    color: #e3bf00;
+  }
+}
+.header__menu-btn.open {
+  color: #cfcfcf;
+}
+.header__menu-btn.close {
+  font-size: 30px;
 }
 @media (max-width: 1199.98px) {
   .header__menu-btn {
@@ -10800,13 +10826,29 @@ body {
   }
 }
 @media (max-width: 1199.98px) {
+  .header__menu-inner {
+    height: calc(100% - 80px);
+  }
+}
+@media (max-width: 1199.98px) {
+  .header__menu.open {
+    transform: scaleY(1);
+    height: calc(100vh - 140px);
+  }
+}
+@media (max-width: 767.98px) {
+  .header__menu.open {
+    height: calc(100vh - 120px);
+  }
+}
+@media (max-width: 1199.98px) {
   .header__menu nav {
     width: 100%;
   }
 }
 .header__menu nav > a, .header__menu nav > span {
   position: relative;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 24px;
   color: #cfcfcf;
   text-decoration: none;
@@ -10847,7 +10889,22 @@ body {
 .header__menu nav > a.selected::after, .header__menu nav > span.selected::after {
   background-color: #cfcfcf;
 }
+@media (max-width: 1199.98px) {
+  .header__menu nav > a, .header__menu nav > span {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .header__menu nav > a, .header__menu nav > span {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
 @media (min-width: 1200px) {
+  .header__menu nav > a, .header__menu nav > span {
+    font-size: 18px;
+    line-height: 24px;
+  }
   .header__menu nav > a::after, .header__menu nav > span::after {
     content: "";
     position: absolute;
@@ -10859,9 +10916,20 @@ body {
     transition: all 0.3s ease-in-out;
   }
 }
+@media (min-width: 1400px) {
+  .header__menu nav > a, .header__menu nav > span {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
 @media (max-width: 1199.98px) {
   .header__menu {
+    display: flex;
     width: 100%;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    height: 0;
+    transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
   }
 }
 @media (max-width: 1199.98px) {
@@ -11047,5 +11115,30 @@ body {
 @media (min-width: 1900px) {
   .container {
     max-width: 1720px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .flex-xl-nocolumn {
+    flex-direction: unset !important;
+  }
+}
+
+.shadow {
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.15s ease-in-out;
+}
+.shadow.show {
+  opacity: 0.8;
+  visibility: visible;
+}
+@media (min-width: 1200px) {
+  .shadow.by-menu {
+    opacity: 0;
+    visibility: hidden;
   }
 }

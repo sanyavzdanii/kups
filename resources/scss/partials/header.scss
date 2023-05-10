@@ -6,10 +6,35 @@ body {
 }
 
 .header {
+  z-index: 100;
   background-color: $burgundy;
   color: $gray-10;
 
   &__menu-btn {
+    font-size: 24px;
+    color: $gold-60;
+    transition: color 0.3s ease-in-out;
+    &:hover {
+      @media (min-width: breakpoint-min(xl)) {
+        color: $gold;
+      }
+    }
+    &:active {
+      transition: background-color 0.1s ease-in-out;
+      color: $gold;
+
+      @media (min-width: breakpoint-min(xl)) {
+        color: $gold-60;
+      }
+    }
+    &.open {
+      color: $gray-10;
+    }
+
+    &.close {
+      font-size: 30px;
+    }
+
     @media (max-width: breakpoint-max(xl)) {
       position: absolute;
       top: 16px;
@@ -17,7 +42,25 @@ body {
     }
   }
 
+  &__menu-inner {
+    @media (max-width: breakpoint-max(xl)) {
+      height: calc(100% - 80px);
+    }
+
+  }
+
   &__menu {
+    &.open {
+      @media (max-width: breakpoint-max(xl)) {
+        transform: scaleY(1);
+        height: calc(100vh - 140px);
+      }
+
+      @media (max-width: breakpoint-max(md)) {
+        height: calc(100vh - 120px);
+      }
+    }
+
     nav {
       @media (max-width: breakpoint-max(xl)) {
         width: 100%;
@@ -26,7 +69,7 @@ body {
 
     nav > a, nav > span {
       position: relative;
-      font-size: 18px;
+      font-size: 20px;
       line-height: 24px;
       color: $gray-10;
       text-decoration: none;
@@ -69,7 +112,19 @@ body {
         }
       }
 
+      @media (max-width: breakpoint-max(xl)) {
+        width: 100%;
+      }
+
+      @media (min-width: breakpoint-min(md)) {
+        font-size: 22px;
+        line-height: 28px;
+      }
+
       @media (min-width: breakpoint-min(xl)) {
+        font-size: 18px;
+        line-height: 24px;
+
         &::after {
           content: '';
           position: absolute;
@@ -81,10 +136,20 @@ body {
           transition: all 0.3s ease-in-out;
         }
       }
+
+      @media (min-width: breakpoint-min(xxl)) {
+        font-size: 20px;
+        line-height: 28px;
+      }
     }
 
     @media (max-width: breakpoint-max(xl)) {
+      display: flex;
       width: 100%;
+      transform: scaleY(0);
+      transform-origin: 0 0;
+      height: 0;
+      transition: transform 0.3s ease-in-out, height 0.3s ease-in-out;
     }
   }
 
