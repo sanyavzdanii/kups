@@ -3,38 +3,117 @@
   border: 2px solid $burgundy;
   border-radius: 10px;
   background-color: $white;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  &:hover {
+    .product-card__rating {
+      @media (min-width: breakpoint-min(xl)) {
+        opacity: 1;
+      }
+    }
+
+    @media (min-width: breakpoint-min(xl)) {
+      box-shadow: 0px 6px 12px 0px rgba(0, 0, 0, 0.5);
+    }
+  }
 
   &__name {
     font-family: $secondFontBold;
     color: $burgundy;
-    font-size: 16px;
+    font-size: 17px;
     line-height: 20px;
-    min-height: 40px;
+    height: 40px;
+    overflow: hidden;
+    &:hover {
+      @media (min-width: breakpoint-min(xl)) {
+        color: $burgundy-30;
+      }
+    }
+    &:active {
+      color: $burgundy-60;
+    }
 
     @media (min-width: breakpoint-min(xl)) {
       font-size: 18px;
       line-height: 24px;
+      height: 48px;
     }
 
     @media (min-width: breakpoint-min(xxl)) {
       font-size: 20px;
       line-height: 28px;
+      height: 56px;
+    }
+  }
+
+  &__price {
+    font-family: $secondFont;
+    font-size: 18px;
+
+    span {
+      font-family: $secondFontBold;
+      font-weight: 700;
+      color: $burgundy;
+      font-size: 20px;
+      line-height: 28px;
+
+      @media (min-width: breakpoint-min(xl)) {
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+
+    @media (min-width: breakpoint-min(xl)) {
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+
+  &__buy {
+    font-family: $secondFontBold;
+    font-size: 18px;
+    line-height: 24px;
+    background-color: $burgundy;
+    color: $white;
+    border-radius: 12px;
+    padding: 9px 22px;
+    transition: background-color 0.3s ease-in-out;
+    &:hover {
+      color: $white;
+      background-color: $burgundy-30;
+    }
+
+    @media (max-width: breakpoint-max(xl)) {
+      width: 100%;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    @media (min-width: breakpoint-min(xl)) {
+      padding: 12px 26px;
+      min-width: 45%;
+    }
+  }
+
+  &__sale {
+    a {
+      color: $gold-60;
+      &:hover {
+        @media (min-width: breakpoint-min(xl)) {
+          color: $gold;
+        }
+      }
     }
   }
 
   &__rating {
     top: 0;
     right: 0;
+    z-index: 5;
     background-color: $burgundy;
     border-bottom-left-radius: 10px;
     border-top-right-radius: 8px;
     opacity: 0.8;
     transition: opacity 0.3s ease-in-out;
-    &:hover {
-      @media (min-width: breakpoint-min(xl)) {
-        opacity: 1;
-      }
-    }
   }
 
   &__rating-value {
@@ -45,7 +124,7 @@
     font-size: 15px;
     line-height: 16px;
     font-weight: 700;
-    background-color: $gray-10;
+    background-color: $gray-05;
     color: $gray-50;
     border-radius: 10px;
 
@@ -98,14 +177,24 @@
       width: auto;
       max-height: 190px;
       max-width: 100%;
+      border-radius: 8px;
 
       @media (min-width: breakpoint-min(xxl)) {
-        max-height: 300px;
+        max-height: 280px;
       }
     }
 
     @media (min-width: breakpoint-min(xxl)) {
-      height: 300px;
+      height: 280px;
     }
+  }
+
+  &__add {
+    color: $gray-20;
+  }
+
+  @media (min-width: breakpoint-min(xl)) {
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
   }
 }
