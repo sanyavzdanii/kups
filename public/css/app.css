@@ -10982,6 +10982,7 @@ body {
 .product-card {
   font-family: "Fira Sans", sans-serif;
   border: 2px solid #800020;
+  border-radius: 10px;
   background-color: #FFFFFF;
 }
 .product-card__name {
@@ -10989,6 +10990,7 @@ body {
   color: #800020;
   font-size: 16px;
   line-height: 20px;
+  min-height: 40px;
 }
 @media (min-width: 1200px) {
   .product-card__name {
@@ -11002,9 +11004,88 @@ body {
     line-height: 28px;
   }
 }
+.product-card__rating {
+  top: 0;
+  right: 0;
+  background-color: #800020;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 8px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+@media (min-width: 1200px) {
+  .product-card__rating:hover {
+    opacity: 1;
+  }
+}
+.product-card__rating-value {
+  padding-top: 2px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-family: "Circe Bold", Arial;
+  font-size: 15px;
+  line-height: 16px;
+  font-weight: 700;
+  background-color: #cfcfcf;
+  color: #404040;
+  border-radius: 10px;
+}
+@media (min-width: 1200px) {
+  .product-card__rating-value {
+    font-size: 17px;
+    line-height: 18px;
+  }
+}
+.product-card__rating-minus, .product-card__rating-plus {
+  font-size: 24px;
+  line-height: 24px;
+  border: 2px solid #cfcfcf;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.product-card__rating-plus {
+  color: #e3bf00;
+  border-color: #e3bf00;
+}
+@media (min-width: 1200px) {
+  .product-card__rating-plus:hover {
+    color: #FFD700;
+  }
+}
+.product-card__rating-plus:active {
+  background-color: #e3bf00;
+  color: #404040;
+}
+.product-card__rating-minus {
+  color: #cfcfcf;
+}
+@media (min-width: 1200px) {
+  .product-card__rating-minus:hover {
+    color: #FFFFFF;
+  }
+}
+.product-card__rating-minus:active {
+  background-color: #cfcfcf;
+  color: #404040;
+}
+.product-card__img {
+  height: 190px;
+}
 .product-card__img img {
-  width: 180px;
-  height: auto;
+  height: 100%;
+  width: auto;
+  max-height: 190px;
+  max-width: 100%;
+}
+@media (min-width: 1400px) {
+  .product-card__img img {
+    max-height: 300px;
+  }
+}
+@media (min-width: 1400px) {
+  .product-card__img {
+    height: 300px;
+  }
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {

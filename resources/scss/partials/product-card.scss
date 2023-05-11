@@ -1,6 +1,7 @@
 .product-card {
   font-family: $firstFont;
   border: 2px solid $burgundy;
+  border-radius: 10px;
   background-color: $white;
 
   &__name {
@@ -8,6 +9,7 @@
     color: $burgundy;
     font-size: 16px;
     line-height: 20px;
+    min-height: 40px;
 
     @media (min-width: breakpoint-min(xl)) {
       font-size: 18px;
@@ -20,10 +22,90 @@
     }
   }
 
+  &__rating {
+    top: 0;
+    right: 0;
+    background-color: $burgundy;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 8px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+    &:hover {
+      @media (min-width: breakpoint-min(xl)) {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__rating-value {
+    padding-top: 2px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-family: $secondFontBold;
+    font-size: 15px;
+    line-height: 16px;
+    font-weight: 700;
+    background-color: $gray-10;
+    color: $gray-50;
+    border-radius: 10px;
+
+    @media (min-width: breakpoint-min(xl)) {
+      font-size: 17px;
+      line-height: 18px;
+    }
+  }
+
+  &__rating-minus, &__rating-plus {
+    font-size: 24px;
+    line-height: 24px;
+    border: 2px solid $gray-10;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &__rating-plus {
+    color: $gold-60;
+    border-color: $gold-60;
+    &:hover {
+      @media (min-width: breakpoint-min(xl)) {
+        color: $gold;
+      }
+    }
+    &:active {
+      background-color: $gold-60;
+      color: $gray-50;
+    }
+  }
+
+  &__rating-minus {
+    color: $gray-10;
+    &:hover {
+      @media (min-width: breakpoint-min(xl)) {
+        color: $white;
+      }
+    }
+    &:active {
+      background-color: $gray-10;
+      color: $gray-50;
+    }
+  }
+
   &__img {
+    height: 190px;
+
     img {
-      width: 180px;
-      height: auto;
+      height: 100%;
+      width: auto;
+      max-height: 190px;
+      max-width: 100%;
+
+      @media (min-width: breakpoint-min(xxl)) {
+        max-height: 300px;
+      }
+    }
+
+    @media (min-width: breakpoint-min(xxl)) {
+      height: 300px;
     }
   }
 }
